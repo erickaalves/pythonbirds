@@ -32,18 +32,22 @@ class Fase():
         :param intervalo_de_colisao:
         """
         self.intervalo_de_colisao = intervalo_de_colisao
+## quando tem o underline é pq é atributo protegido,
+##não pode mexer diretamente nesse atributo, é so dessa classe
         self._passaros = []
         self._porcos = []
         self._obstaculos = []
 
-
+##metodo extend só estende um metodo já existente, lista1=lista1+lista2
+    ##nao cria nova lista, só usa o que já tem
     def adicionar_obstaculo(self, *obstaculos):
         """
         Adiciona obstáculos em uma fase
 
         :param obstaculos:
         """
-        pass
+        ## fez um extend de _obstaculos com a lista de obstaculos
+        self._obstaculos.extend(obstaculos)
 
     def adicionar_porco(self, *porcos):
         """
@@ -51,7 +55,8 @@ class Fase():
 
         :param porcos:
         """
-        pass
+        self._porcos.extend(porcos)
+
 
     def adicionar_passaro(self, *passaros):
         """
@@ -59,7 +64,7 @@ class Fase():
 
         :param passaros:
         """
-        pass
+        self._passaros.extend(passaros)
 
     def status(self):
         """
