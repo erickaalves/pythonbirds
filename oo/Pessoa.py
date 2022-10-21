@@ -1,3 +1,4 @@
+
 class Pessoa:
     olhos = 2
     def __init__(self, *filhos, nome=None, idade=35):
@@ -18,9 +19,10 @@ class Pessoa:
         nome_composto = pai1.nome, pai1.filhos
         print(nome_composto)
 
+class Homem(Pessoa):
+    pass
 
-
-pessoa1 = Pessoa(nome='Erick')
+pessoa1 = Homem(nome='Erick')
 
 pai1 = Pessoa(('Erick', 'Carol', 'Sara'), nome = 'Roberto', idade = 40)
 print(pessoa1.nome)
@@ -52,3 +54,12 @@ print(Pessoa.metodo_estatico(), pai1.metodo_estatico())
 ##SEM USO DE OBJETOS OU CLASSE
 print(Pessoa.metodo_de_classe(), pai1.metodo_de_classe())
 ##USANDO OS ATRIBUTOS DE CLASSE
+
+print(isinstance(pai1, Pessoa))
+##pai 1 pertence a classe pessoa
+print(isinstance(pai1, Homem))
+##mas nao necessariamente pai1 é homem
+
+print(isinstance(pessoa1, Pessoa))
+## só a pessoa que eu modifiquei passaa ser parte de Homem e de Pessoa
+print(isinstance(pessoa1, Homem))
